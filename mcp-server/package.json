@@ -1,0 +1,23 @@
+{
+  "name": "prophecy-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for prophecy monitoring system",
+  "type": "module",
+  "bin": {
+    "prophecy-mcp": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "@supabase/supabase-js": "^2.57.4",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "typescript": "^5.7.2"
+  }
+}

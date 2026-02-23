@@ -1,0 +1,27 @@
+name = "theophysics-pipeline"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[build]
+command = "npm run build"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "theophysics-db"
+database_id = "your-database-id"
+
+[[r2_buckets]]
+binding = "R2_BUCKET"
+bucket_name = "theophysics-media"
+
+[[queues.producers]]
+binding = "MEDIA_QUEUE"
+queue = "theophysics-media-queue"
+
+[[queues.consumers]]
+queue = "theophysics-media-queue"
+max_batch_size = 10
+max_batch_timeout = 30
+
+[vars]
+JWT_SECRET = "change-this-to-a-secure-secret"
